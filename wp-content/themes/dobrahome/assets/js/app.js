@@ -93,7 +93,7 @@
     function idx() { return Math.round(t.scrollLeft / t.clientWidth); }
     function upd() {
       var i = idx();
-      thumbs.forEach(function (b, j) { b.setAttribute("aria-current", j === i ? "true" : "false"); });
+      thumbs.forEach(function (b, j) { b.setAttribute("aria-current", j === i ? "true" : "false"); }); var tb = thumbs[i], st = tb && tb.parentNode; if (st && st.scrollWidth > st.clientWidth) { var x = tb.offsetLeft - st.offsetLeft; if (x < st.scrollLeft || x + tb.offsetWidth > st.scrollLeft + st.clientWidth) st.scrollTo({ left: x - 8, behavior: "smooth" }); }
       if (cnt) cnt.textContent = (i + 1) + " / " + t.children.length;
     }
     thumbs.forEach(function (b, j) { b.addEventListener("click", function () { t.scrollTo({ left: j * t.clientWidth, behavior: "smooth" }); }); });

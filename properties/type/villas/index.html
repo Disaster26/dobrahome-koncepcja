@@ -100,6 +100,9 @@
 .cookies p{font-size:13px;line-height:1.4}
 @media (max-width:599px){.cookies{left:8px;right:8px;bottom:8px;padding:10px 12px;gap:8px}.cookies .cb{width:100%;display:grid;grid-template-columns:1fr 1fr;gap:6px}.cookies .cb .ok{grid-column:1/-1}.cookies button{padding:0 10px}}
 .cm-track .pion,.gal-track .pion{background:#0B1533}.cm-track .pion img,.gal-track .pion img{object-fit:contain}
+.gal-thumbs{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - 24px)/4);overflow-x:auto;scrollbar-width:thin;scroll-snap-type:x proximity}
+.gal-thumbs .thumb{scroll-snap-align:start}
+@media (min-width:1024px){.gal-thumbs{grid-auto-columns:calc((100% - 40px)/6)}}
 </style>
 <meta name="description" content="Detached villas, townhouses, homes with a pool. Current listings from DobraHome in Málaga and on the Costa del Sol.">
 <link rel="canonical" href="https://wylinka-podglad.pl/dobrahome-koncepcja/properties/type/villas/">
