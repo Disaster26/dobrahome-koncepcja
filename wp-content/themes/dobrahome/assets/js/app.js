@@ -70,7 +70,7 @@
       next.addEventListener("click", function () { s.scrollBy({ left: step(), behavior: "smooth" }); });
     }
     s.addEventListener("scroll", function () { w.requestAnimationFrame(upd); }, { passive: true });
-    w.addEventListener("resize", upd); upd();
+    w.addEventListener("resize", function () { w.requestAnimationFrame(upd); }); w.requestAnimationFrame(upd);
   });
 
   /* karuzele zdjęć w kartach */
@@ -101,7 +101,7 @@
     var p = g.querySelector(".cm-prev"), nx = g.querySelector(".cm-next");
     if (p) p.addEventListener("click", function () { t.scrollTo({ left: Math.max(0, idx() - 1) * t.clientWidth, behavior: "smooth" }); });
     if (nx) nx.addEventListener("click", function () { t.scrollTo({ left: Math.min(t.children.length - 1, idx() + 1) * t.clientWidth, behavior: "smooth" }); });
-    upd();
+    w.requestAnimationFrame(upd);
   });
 
   /* lightbox */
